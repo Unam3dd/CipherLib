@@ -1,0 +1,22 @@
+#ifndef PRNG_H
+#define PRNG_H
+
+//////////////////////////////////
+//
+//			INCLUDES
+//
+//////////////////////////////////
+
+#include <stddef.h>
+#include <stdint.h>
+
+//////////////////////////////////
+//
+//			PRNG ALGORITHM
+//
+//////////////////////////////////
+
+uint8_t	*urandom(uint8_t *buf, size_t length);
+uint8_t	*useed(uint8_t *buf, size_t length);
+
+#endif
