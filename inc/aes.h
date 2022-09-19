@@ -58,6 +58,7 @@ enum aes_flag_t
 struct aes_key_t
 {
 	__m128i	key[AES_KEY_MAX_ROUND];
+	int		nr;
 };
 
 #endif
