@@ -17,7 +17,7 @@ $(NAME): $(C_OBJ)
 clean:
 	rm -rf $(C_OBJ)
 
-unit:
+unit: $(NAME)
 	$(CC) -Iinc test/hex_encoder.c cipherlib.a -O3 -o test/hex_encoder 
 	$(CC) -Iinc test/hex_decoder.c cipherlib.a -O3 -o test/hex_decoder
 	$(CC) -Iinc test/base64_encoder.c cipherlib.a -O3 -o test/base64_encoder
@@ -26,6 +26,9 @@ unit:
 	$(CC) -Iinc test/prng.c cipherlib.a -O3 -o test/prng
 	$(CC) -Iinc test/simple_xor.c cipherlib.a -O3 -o test/simple_xor
 	$(CC) -Iinc test/xor_128.c cipherlib.a -O3 -o test/xor_128
+	$(CC) -Iinc test/aes_key_schedule.c cipherlib.a -O3 -o test/aes_key_schedule
+	$(CC) -Iinc test/aes_128_enc_dec.c cipherlib.a -O3 -o test/aes_128_enc_dec
+	$(CC) -Iinc test/pkcs7_test.c cipherlib.a -O3 -o test/pkcs7_test
 
 unit_clean: $(UNIT_OBJ)
 	rm -rf $(UNIT_OBJ)

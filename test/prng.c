@@ -14,7 +14,7 @@ int main(void)
 	printf("\n");
 	useed(rndseed, sizeof(rndseed));
 	for (int i = 0; i < 16; i++)
-		printf("%x", rndseed[i]);
+		printf("%02x", rndseed[i]);
 	printf("\n");
 	return (0);
 }
