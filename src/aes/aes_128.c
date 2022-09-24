@@ -6,7 +6,7 @@
 //
 //////////////////////////////////
 
-int	aes_128_encrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched)
+int	aes_128_ecb_encrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched)
 {
 	if (!in || !out || !length || !sched) return (1);
 	__m128i	tmp;
@@ -27,7 +27,7 @@ int	aes_128_encrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched)
 	return (0);
 }
 
-int	aes_128_decrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched)
+int	aes_128_ecb_decrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched)
 {
 	if (!in || !out || !length || !sched) return (1);
 	__m128i tmp;

@@ -15,9 +15,9 @@ int main(void)
 	unsigned char	msg[0x20];
 
 	memset(msg, 0, sizeof(msg));
-	urandom(msg, 18);
+	urandom(msg, 14);
 	show_data(msg, sizeof(msg));
-	get_padding_size(msg, 18, sizeof(msg));
+	get_padding_size(msg, 14, sizeof(msg));
 	printf("\n");
 	show_data(msg, sizeof(msg));
 	return (0);

@@ -45,7 +45,6 @@ int	check_cpu_support_aes(void);
 //////////////////////////////////
 
 typedef struct 	aes_key_t		aes_key_t;
-typedef struct	aes_table_t		aes_table_t;
 typedef enum   	aes_flag_t		aes_flag_t;
 typedef enum	aes_rounds_t	aes_rounds_t;
 typedef	int		(*aes_cb_t)(uint8_t *, uint8_t *, size_t, aes_key_t *);
@@ -81,13 +80,6 @@ struct aes_key_t
 	int		nr;
 };
 
-struct	aes_table_t
-{
-	int			mod;			// Depends on flag
-	aes_cb_t	enc;			// callback Enc
-	aes_cb_t	dec;			// callback Dec
-};
-
 //////////////////////////////////
 //
 //	  PRINT 128 XMM REGISTERS
@@ -111,17 +103,7 @@ void	AES_128_KEY_INV_EXPANSION(aes_key_t *keys, aes_key_t *buf);
 //
 //////////////////////////////////
 
-int	aes_128_encrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched);
-int	aes_128_decrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched);
-
-//////////////////////////////////
-//
-//			AES TABLE
-//
-//			aes_table.c
-//
-//////////////////////////////////
-
-extern const	aes_table_t	aes_table[AES_TABLE_SIZE];
+int	aes_128_ecb_encrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched);
+int	aes_128_ecb_decrypt(uint8_t *in, uint8_t *out, size_t length, aes_key_t *sched);
 
 #endif
