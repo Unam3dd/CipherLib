@@ -27,7 +27,7 @@ unit: $(NAME)
 	$(CC) -Iinc test/simple_xor.c cipherlib.a -O3 -o test/simple_xor
 	$(CC) -Iinc test/xor_128.c cipherlib.a -O3 -o test/xor_128
 	$(CC) -Iinc test/aes_key_schedule.c cipherlib.a -O3 -o test/aes_key_schedule
-	$(CC) -Iinc test/aes_128_enc_dec.c cipherlib.a -O3 -o test/aes_128_enc_dec
+	$(CC) -Iinc test/aes_128_ecb_no_padding.c cipherlib.a -O3 -o test/aes_128_ecb_no_padding
 	$(CC) -Iinc test/pkcs7_test.c cipherlib.a -O3 -o test/pkcs7_test
 
 unit_clean: $(UNIT_OBJ)

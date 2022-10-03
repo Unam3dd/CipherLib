@@ -35,6 +35,6 @@
  *
 */
 
-int	get_padding_size(uint8_t *buf, size_t len, size_t block_size);
+int	write_padding_size(uint8_t *buf, size_t len, size_t block_size);
 
 #endif

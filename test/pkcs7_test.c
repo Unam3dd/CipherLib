@@ -17,7 +17,7 @@ int main(void)
 	memset(msg, 0, sizeof(msg));
 	urandom(msg, 14);
 	show_data(msg, sizeof(msg));
-	get_padding_size(msg, 14, sizeof(msg));
+	write_padding_size(msg, 14, sizeof(msg));
 	printf("\n");
 	show_data(msg, sizeof(msg));
 	return (0);

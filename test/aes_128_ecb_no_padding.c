@@ -48,13 +48,13 @@ int main(void)
 	printf("Invert Key expansion key schedule\n");
 	show_keys(&sched[1]);
 
-	aes_128_ecb_encrypt(msg, buf, sizeof(msg), &sched[0]);
+	aes_ecb_encrypt(msg, buf, sizeof(msg), &sched[0]);
 
 	printf("Output :\n");
 	show_data(buf, sizeof(buf));
 	printf("\n");
 
-	aes_128_ecb_decrypt(buf, dec, sizeof(buf), &sched[1]);
+	aes_ecb_decrypt(buf, dec, sizeof(buf), &sched[1]);
 
 	printf("Unciphered data :\n");
 	show_data(dec, sizeof(dec));

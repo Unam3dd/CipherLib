@@ -7,7 +7,7 @@
 //////////////////////////////////
 
 
-int	get_padding_size(uint8_t *buf, size_t length, size_t block_size)
+int	write_padding_size(uint8_t *buf, size_t length, size_t block_size)
 {
 	if (!buf)
 		return (0);
