@@ -1,0 +1,51 @@
+#ifndef RC4_H
+#define RC4_H
+
+/////////////////////////////////
+//
+//			INCLUDES
+//
+/////////////////////////////////
+
+#include <stddef.h>
+#include <stdint.h>
+
+/////////////////////////////////
+//
+//			DEFINES
+//
+/////////////////////////////////
+
+#define S_BOX_SIZE 0x100
+#define KEY_SIZE 0x100
+
+/////////////////////////////////
+//
+//			TYPEDEFS
+//
+/////////////////////////////////
+
+typedef struct rc4_t	rc4_t;
+
+/////////////////////////////////
+//
+//			STRUCT
+//
+/////////////////////////////////
+
+struct rc4_t
+{
+	uint8_t	s[S_BOX_SIZE];
+	uint8_t k[KEY_SIZE];
+};
+
+/////////////////////////////////
+//
+//			RC4
+//
+/////////////////////////////////
+
+uint8_t	*rc4_cipher(rc4_t *ctx, uint8_t *in, uint8_t *out, size_t size, size_t *sout);
+int		key_schedule(rc4_t *ctx, const char *key, size_t length);
+
+#endif

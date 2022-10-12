@@ -1,0 +1,53 @@
+#ifndef BASE32_H
+#define BASE32_H
+
+/////////////////////////////////
+//
+//			BASE32
+//
+/////////////////////////////////
+
+/////////////////////////////////
+//
+//			INCLUDES
+//
+/////////////////////////////////
+
+#include <stdint.h>
+#include <stddef.h>
+
+/////////////////////////////////
+//
+//			DEFINES
+//
+/////////////////////////////////
+
+#define BASE32_TABLE_SIZE 0x20
+#define BASE32_TABLE_DECODING_SIZE (BASE32_TABLE_SIZE << 3)
+
+/////////////////////////////////
+//
+//			BASE32 TABLE
+//
+/////////////////////////////////
+
+extern const uint8_t	BASE32_TABLE[BASE32_TABLE_SIZE];
+extern const uint8_t	BASE32_TABLE_DECODING[BASE32_TABLE_DECODING_SIZE];
+
+/////////////////////////////////
+//
+//			ENCODER
+//
+/////////////////////////////////
+
+uint8_t	*base32_encode(uint8_t *data, uint8_t *out, size_t length, size_t *len_enc);
+
+/////////////////////////////////
+//
+//			DECODER
+//
+/////////////////////////////////
+
+uint8_t	*base32_decode(uint8_t *data, uint8_t *out, size_t length, size_t *len_dec);
+
+#endif

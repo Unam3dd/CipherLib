@@ -1,0 +1,31 @@
+#ifndef ROT_H
+#define ROT_H
+
+#include <stdint.h>
+#include <stddef.h>
+
+/////////////////////////////////
+//
+//			ROT13
+//
+/////////////////////////////////
+
+char	*rot13_cipher(char *in, char *out);
+
+/////////////////////////////////
+//
+//			CAESAR
+//
+/////////////////////////////////
+
+char	*caesar_cipher(char *in, char *out, char key);
+
+/////////////////////////////////
+//
+//			ROT47
+//
+/////////////////////////////////
+
+char	*rot47_cipher(char *in, char *out, size_t length);
+
+#endif

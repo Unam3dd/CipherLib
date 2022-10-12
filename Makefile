@@ -29,6 +29,10 @@ unit: $(NAME)
 	$(CC) -Iinc test/aes_key_schedule.c cipherlib.a -O3 -o test/aes_key_schedule
 	$(CC) -Iinc test/aes_128_ecb_no_padding.c cipherlib.a -O3 -o test/aes_128_ecb_no_padding
 	$(CC) -Iinc test/pkcs7_test.c cipherlib.a -O3 -o test/pkcs7_test
+	$(CC) -Iinc test/rot13.c cipherlib.a -O3 -o test/rot13
+	$(CC) -Iinc test/caesar.c cipherlib.a -O3 -o test/caesar
+	$(CC) -Iinc test/base32_encoder.c cipherlib.a -O3 -o test/base32_encoder
+	$(CC) -Iinc test/rot47.c cipherlib.a -O3 -o test/rot47
 
 unit_clean: $(UNIT_OBJ)
 	rm -rf $(UNIT_OBJ)
